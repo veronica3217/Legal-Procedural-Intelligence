@@ -1,151 +1,95 @@
  # Legal Procedural Intelligence
 
-A research-oriented project exploring AI-based legal document understanding, information retrieval, question answering, evidence extraction, and procedural intelligence for the Indian legal system.
-
----
+AI-based legal procedural intelligence system focused on understanding Indian legal documents, extracting important information, and supporting legal research.
 
 ## Primary Dataset
 
 ### Indian Supreme Court Judgments
 
-The primary dataset for this project is the **Indian Supreme Court Judgments** corpus.
+Official Indian Supreme Court Judgments dataset hosted through the AWS Open Data Registry.
 
-* **AWS Open Data Registry:**
-  https://registry.opendata.aws/indian-supreme-court-judgments/
+**Dataset:** Indian Supreme Court Judgments
+**Source:** AWS Open Data Registry
 
-* **GitHub Repository:**
-  https://github.com/vanga/indian-supreme-court-judgments
+**Direct dataset link:**
 
-* **Dataset Documentation:**
-  https://github.com/vanga/indian-supreme-court-judgments/blob/main/opendata/docs/dataset.md
+**2023 Indian Supreme Court Judgments — English TAR (≈382 MB)**
 
-* **AWS S3 Bucket:**
-  `s3://indian-supreme-court-judgments/`
+The official dataset documentation confirms this exact S3 URL pattern for downloading the 2023 English archive, and the archive contains the English judgment PDFs for that year.
 
----
+```text
+s3://indian-supreme-court-judgments/data/tar/year=2023/english/english.tar
+```
 
-# Supporting Datasets
+**Download command:**
 
-## 1. IndicLegalQA
+```bash
+aws s3 cp s3://indian-supreme-court-judgments/data/tar/year=2023/english/english.tar . --no-sign-request
+```
 
-**Purpose:** Legal Question Answering for the Indian judiciary.
+**Official Dataset Sources:**
 
-* **Dataset / Paper:**
-  https://doi.org/10.1016/j.dib.2025.111647
+* [AWS Open Data Registry](https://registry.opendata.aws/indian-supreme-court-judgments/)
+* [GitHub Repository](https://github.com/vanga/indian-supreme-court-judgments)
+* [Dataset Documentation](https://github.com/vanga/indian-supreme-court-judgments/blob/main/opendata/docs/dataset.md)
 
-* **Mendeley Data:**
-  https://data.mendeley.com/datasets/gf8n8cnmvc/2
+## Supporting Datasets
 
----
+### IndicLegalQA
 
-## 2. ILDC — Indian Legal Documents Corpus
+* [Dataset](https://data.mendeley.com/datasets/gf8n8cnmvc/2)
+* [Paper / DOI](https://doi.org/10.1016/j.dib.2025.111647)
 
-**Purpose:** Court Judgment Prediction and Explanation.
+### ILDC — Indian Legal Documents Corpus
 
-* **Research Paper:**
-  https://aclanthology.org/2021.acl-long.313/
+* [GitHub](https://github.com/Legal-NLP-EkStep/ILDC)
+* [Research Paper](https://aclanthology.org/2021.acl-long.313/)
 
-* **Dataset / GitHub:**
-  https://github.com/Legal-NLP-EkStep/ILDC
+### InLegalNER
 
----
+* [Hugging Face Dataset](https://huggingface.co/datasets/opennyaiorg/InLegalNER)
+* [OpenNyAI GitHub](https://github.com/OpenNyAI)
 
-## 3. InLegalNER
+### AILQA
 
-**Purpose:** Named Entity Recognition for Indian legal documents.
+* [GitHub](https://github.com/ShubhamKumarNigam/AILQA)
+* [Research Paper](https://link.springer.com/article/10.1007/s10506-026-09537-2)
 
-* **Hugging Face Dataset:**
-  https://huggingface.co/datasets/opennyaiorg/InLegalNER
+### ILSIC
 
-* **OpenNyAI GitHub:**
-  https://github.com/OpenNyAI
+* [GitHub](https://github.com/Legal-NLP-EkStep/ILSIC)
+* [Research Paper](https://aclanthology.org/2026.findings-eacl.354/)
 
----
+### Indian High Court Judgments
 
-## 4. AILQA
+* [AWS Open Data Registry](https://registry.opendata.aws/indian-high-court-judgments/)
 
-**Purpose:** Indian Legal Question Answering and Retrieval-Augmented Generation.
+## Research Papers
 
-* **Research Paper:**
-  https://link.springer.com/article/10.1007/s10506-026-09537-2
+### Journal Papers
 
-* **GitHub Repository:**
-  https://github.com/ShubhamKumarNigam/AILQA
+1. **Intelligent Legal Tech to Empower Self-Represented Litigants**
+   Amy J. Schmitz & John Zeleznikow, 2022
+   [Paper](https://journals.library.columbia.edu/index.php/stlr/article/view/9391)
 
----
+2. **Survey on Legal Information Extraction: Current Status and Open Challenges**
+   Damith Premasiri et al., 2025
+   [Paper](https://link.springer.com/article/10.1007/s10115-025-02600-5)
 
-## 5. ILSIC
+3. **An End-to-End Joint Model for Evidence Information Extraction from Court Record Document**
+   Donghong Ji et al., 2021
+   [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0306457320308001)
 
-**Purpose:** Identification of Indian legal statutes from layperson queries.
+4. **LegalAsst: Human-centered and AI-empowered machine to enhance court productivity and legal assistance**
+   2024
+   [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0020025524009666)
 
-* **Research Paper:**
-  https://aclanthology.org/2026.findings-eacl.354/
+5. **AILQA: Evaluating AI-driven Legal Question Answering Systems for the Indian Legal System**
+   Shubham Kumar Nigam et al., 2026
+   [Paper](https://link.springer.com/article/10.1007/s10506-026-09537-2)
 
-* **Dataset / GitHub:**
-  https://github.com/Legal-NLP-EkStep/ILSIC
+### Research Preprint
 
----
-
-## 6. Indian High Court Judgments
-
-**Purpose:** Future expansion and validation using Indian High Court judgments.
-
-* **AWS Open Data Registry:**
-  https://registry.opendata.aws/indian-high-court-judgments/
-
----
-
-# Research Papers
-
-## Journal Papers
-
-| # | Paper                                                                                                                     | Year | Link                                                                    |
-| - | ------------------------------------------------------------------------------------------------------------------------- | ---: | ----------------------------------------------------------------------- |
-| 1 | **Intelligent Legal Tech to Empower Self-Represented Litigants** — Amy J. Schmitz & John Zeleznikow                       | 2022 | https://journals.library.columbia.edu/index.php/stlr/article/view/9391  |
-| 2 | **Survey on Legal Information Extraction: Current Status and Open Challenges** — Damith Premasiri et al.                  | 2025 | https://link.springer.com/article/10.1007/s10115-025-02600-5            |
-| 3 | **An End-to-End Joint Model for Evidence Information Extraction from Court Record Document** — Donghong Ji et al.         | 2021 | https://www.sciencedirect.com/science/article/abs/pii/S0306457320308001 |
-| 4 | **LegalAsst: Human-centered and AI-empowered machine to enhance court productivity and legal assistance**                 | 2024 | https://www.sciencedirect.com/science/article/abs/pii/S0020025524009666 |
-| 5 | **AILQA: Evaluating AI-driven Legal Question Answering Systems for the Indian Legal System** — Shubham Kumar Nigam et al. | 2026 | https://link.springer.com/article/10.1007/s10506-026-09537-2            |
-
-## Research Preprint
-
-| # | Paper                                                                                                                                                   | Year | Link                             |
-| - | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---: | -------------------------------- |
-| 6 | **Time as Structure: Temporal Dependency Graphs for Verifiable Deadline Computation over Legal Documents** — Maryia Zhyrko, Lifeng Han & Suzan Verberne | 2026 | https://arxiv.org/abs/2608.15270 |
-
----
-
-# Research Areas
-
-The referenced datasets and papers cover the following areas:
-
-* Legal Document Understanding
-* Legal Information Extraction
-* Legal Named Entity Recognition
-* Legal Information Retrieval
-* Legal Question Answering
-* Retrieval-Augmented Generation (RAG)
-* Evidence Extraction
-* Legal Citation Analysis
-* Procedural Event Extraction
-* Temporal Legal Reasoning
-* Indian Legal NLP
-
----
-
-# Official Sources
-
-* **Supreme Court of India:**
-  https://www.sci.gov.in/
-
-* **eCourts Services:**
-  https://services.ecourts.gov.in/
-
-* **AWS Open Data Registry:**
-  https://registry.opendata.aws/
-
-* **Indian Supreme Court Judgments Dataset:**
-  https://registry.opendata.aws/indian-supreme-court-judgments/
-
-* **Indian High Court Judgments Dataset:**
-  https://registry.opendata.aws/indian-high-court-judgments/
+6. **Time as Structure: Temporal Dependency Graphs for Verifiable Deadline Computation over Legal Documents**
+   Maryia Zhyrko, Lifeng Han & Suzan Verberne, 2026
+   [arXiv](https://arxiv.org/abs/2608.15270)
