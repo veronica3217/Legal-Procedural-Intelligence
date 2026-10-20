@@ -1,0 +1,127 @@
+===========================================================================
+      LEGAL NAMED ENTITY RECOGNITION (MODEL 1) EVALUATION REPORT          
+===========================================================================
+
+Model Path        : D:\LPI\ml-service\model1
+Dataset Path      : C:\Users\VERONICA A\legal-procedural-intelligence\data\03_legal_ner\InLegalNER
+Total Test Split  : 4501 examples
+Evaluated Examples: 4501 examples
+Evaluation Time   : 991.00 seconds
+
+--- OVERALL STRICT ENTITY SPAN METRICS ---
+Precision          : 0.7309
+Recall             : 0.8329
+F1-Score           : 0.7786
+True Positives     : 11132
+False Positives    : 4098
+False Negatives    : 2233
+Ground Truth Count : 13365
+Predicted Count    : 15230
+
+--- PER-ENTITY TYPE PERFORMANCE ---
+Entity Type        | Precision  | Recall     | F1-Score   | TP     | FP     | FN     | Support
+--------------------------------------------------------------------------------
+CASE_NUMBER        | 0.6624     | 0.7676     | 0.7111     | 512    | 261    | 155    | 667    
+COURT              | 0.8400     | 0.8771     | 0.8582     | 1071   | 204    | 150    | 1221   
+DATE               | 0.8966     | 0.9128     | 0.9046     | 1015   | 117    | 97     | 1112   
+GPE                | 0.6705     | 0.7198     | 0.6943     | 519    | 255    | 202    | 721    
+JUDGE              | 0.8070     | 0.8932     | 0.8479     | 527    | 126    | 63     | 590    
+LAWYER             | 0.6873     | 0.8593     | 0.7637     | 1545   | 703    | 253    | 1798   
+ORG                | 0.5321     | 0.7976     | 0.6384     | 729    | 641    | 185    | 914    
+OTHER_PERSON       | 0.8466     | 0.8656     | 0.8560     | 960    | 174    | 149    | 1109   
+PETITIONER         | 0.6946     | 0.7123     | 0.7033     | 614    | 270    | 248    | 862    
+PRECEDENT          | 0.5743     | 0.7015     | 0.6316     | 456    | 338    | 194    | 650    
+PROVISION          | 0.8735     | 0.9172     | 0.8948     | 1119   | 162    | 101    | 1220   
+RESPONDENT         | 0.5395     | 0.7547     | 0.6292     | 840    | 717    | 273    | 1113   
+STATUTE            | 0.8980     | 0.9026     | 0.9003     | 880    | 100    | 95     | 975    
+WITNESS            | 0.9200     | 0.8354     | 0.8756     | 345    | 30     | 68     | 413    
+
+--- SEQEVAL CLASSIFICATION REPORT ---
+              precision    recall  f1-score   support
+
+ CASE_NUMBER     0.6606    0.7699    0.7111       665
+       COURT     0.8401    0.8780    0.8586      1221
+        DATE     0.8980    0.9182    0.9080      1112
+         GPE     0.6697    0.7198    0.6939       721
+       JUDGE     0.8186    0.8949    0.8551       590
+      LAWYER     0.7158    0.8543    0.7789      1798
+         ORG     0.5302    0.7965    0.6366       914
+OTHER_PERSON     0.8458    0.8656    0.8556      1109
+  PETITIONER     0.7110    0.7135    0.7122       862
+   PRECEDENT     0.5562    0.6923    0.6169       650
+   PROVISION     0.8692    0.9148    0.8914      1220
+  RESPONDENT     0.5701    0.7601    0.6515      1113
+     STATUTE     0.8970    0.9026    0.8998       975
+     WITNESS     0.9200    0.8354    0.8756       413
+
+   micro avg     0.7389    0.8327    0.7830     13363
+   macro avg     0.7502    0.8226    0.7818     13363
+weighted avg     0.7530    0.8327    0.7882     13363
+
+
+--- ERROR ANALYSIS EXAMPLES (FIRST 10 OF EACH CATEGORY) ---
+
+1. Type Mismatches (Correct Span / Overlap, Wrong Entity Class):
+   - Doc 1: True='PETITIONER' ("Special Land Acquisition Officer and
+               Competent Authority,
+               National Highways Authority of India,
+               Nh-7, No.678/3, Neerubhavi Kempanna
+               Layout, Hebbal, Bangalore - 560 024") vs Pred='RESPONDENT' ("Special Land Acquisition Officer and
+               Competent Authority,
+               National Highways Authority of India")
+   - Doc 4: True='LAWYER' ("K. Chenchu Rami Reddy") vs Pred='RESPONDENT' ("K. Chenchu Rami Reddy")
+   - Doc 8: True='JUDGE' ("P. K. Kedia") vs Pred='LAWYER' ("P")
+   - Doc 8: True='JUDGE' ("Mahavir Prasad") vs Pred='LAWYER' ("Prasad")
+   - Doc 22: True='LAWYER' ("Pooja Tidke") vs Pred='RESPONDENT' ("Po")
+   - Doc 22: True='LAWYER' ("Ryan
+                            Menedes") vs Pred='RESPONDENT' ("Menede")
+   - Doc 25: True='PETITIONER' ("Malathi,
+@ Maluruthamma") vs Pred='RESPONDENT' ("Mal")
+   - Doc 29: True='PETITIONER' ("Suresan") vs Pred='RESPONDENT' ("Suresan")
+   - Doc 29: True='PETITIONER' ("State Of Kerala") vs Pred='RESPONDENT' ("State Of Kerala")
+   - Doc 29: True='RESPONDENT' ("Prajeesh") vs Pred='PETITIONER' ("h")
+
+2. Boundary Mismatches (Same Entity Class, Sub-span / Offset Error):
+   - Doc 0: Class='RESPONDENT', True="Surendran" (1302, 1311) vs Pred="Surendran
+                Police Constable, Vadakke" (1302, 1353)
+   - Doc 0: Class='LAWYER', True="K.K.Dheerendrakrishnan" (1651, 1673) vs Pred="K" (1651, 1652)
+   - Doc 0: Class='LAWYER', True="S.Rajeev" (1702, 1710) vs Pred="Rajee" (1704, 1709)
+   - Doc 1: Class='LAWYER', True="Chandan" (1133, 1140) vs Pred="Chandan." (1133, 1141)
+   - Doc 1: Class='RESPONDENT', True="Vishnukanth G Katare" (1302, 1322) vs Pred="Vishnukanth G Kat" (1302, 1319)
+   - Doc 3: Class='PETITIONER', True="Ravi @ Raveendran" (550, 567) vs Pred="Ravi" (550, 554)
+   - Doc 3: Class='LAWYER', True="Prasun.S" (796, 804) vs Pred="Prasun" (796, 802)
+   - Doc 8: Class='COURT', True="Income Tax Appellate Tribunal
+                     Ahmedabad "C" Bench" (7, 77) vs Pred="Income Tax Appellate Tribunal
+                     Ahmedabad "" (7, 69)
+   - Doc 8: Class='PETITIONER', True="Eagle Steel Industries" (278, 300) vs Pred="Eagle Steel Industries P." (278, 303)
+   - Doc 8: Class='RESPONDENT', True="Income Tax Officer, Ward-
+     Ltd., Plot No. 9, Sanghi      2 (1)(1), Ahmedabad
+     Cement Godown, Sarkhej
+     Sanand Highway, Village:
+     Ularia,      Ahmedabad-
+     382210" (308, 487) vs Pred="Income Tax Officer, Ward-
+     Ltd." (308, 343)
+
+3. Completely Missed Ground Truth Entities (False Negatives):
+   - Doc 0: Missed 'RESPONDENT' -> "Stephen" (1556, 1563)
+   - Doc 0: Missed 'LAWYER' -> "M.S.Breez" (1739, 1748)
+   - Doc 22: Missed 'RESPONDENT' -> "Tag 15" (776, 782)
+   - Doc 22: Missed 'LAWYER' -> "Krushi Barfiwala" (905, 921)
+   - Doc 27: Missed 'RESPONDENT' -> "Burjor H. Antia" (1912, 1927)
+   - Doc 27: Missed 'RESPONDENT' -> "Sharookh Sethna" (1965, 1980)
+   - Doc 27: Missed 'LAWYER' -> "Zerick Dastur" (2831, 2844)
+   - Doc 27: Missed 'LAWYER' -> "Mulla" (3655, 3660)
+   - Doc 27: Missed 'LAWYER' -> "Mulla" (3666, 3671)
+   - Doc 27: Missed 'LAWYER' -> "Craige Blunt" (3676, 3688)
+
+4. Spurious Predicted Entities (False Positives):
+   - Doc 0: Extra 'RESPONDENT' -> "Inspector Of Police, Vadakkekkad" (1204, 1236)
+   - Doc 0: Extra 'LAWYER' -> "Vadakkeka" (1598, 1607)
+   - Doc 0: Extra 'LAWYER' -> "n" (1612, 1613)
+   - Doc 0: Extra 'LAWYER' -> "K" (1653, 1654)
+   - Doc 0: Extra 'LAWYER' -> "heerendrakrishnan" (1656, 1673)
+   - Doc 1: Extra 'RESPONDENT' -> "Ministry of Road Transport & Highways" (486, 523)
+   - Doc 1: Extra 'LAWYER' -> "Usha Rani" (1069, 1078)
+   - Doc 3: Extra 'PETITIONER' -> "balavayal Police Station" (480, 504)
+   - Doc 3: Extra 'PETITIONER' -> "Wayanad" (507, 514)
+   - Doc 3: Extra 'RESPONDENT' -> "@ Ra" (555, 559)

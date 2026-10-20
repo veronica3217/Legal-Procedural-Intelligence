@@ -1,0 +1,2525 @@
+{
+  "model_name": "InLegalNER-BERT (Model 1)",
+  "evaluation_timestamp": "2026-10-09 09:31:04",
+  "test_dataset_path": "C:\\Users\\VERONICA A\\legal-procedural-intelligence\\data\\03_legal_ner\\InLegalNER",
+  "total_test_examples": 4501,
+  "successfully_evaluated_examples": 4501,
+  "inference_duration_seconds": 991.0,
+  "overall_metrics": {
+    "precision": 0.7309,
+    "recall": 0.8329,
+    "f1": 0.7786,
+    "tp": 11132,
+    "fp": 4098,
+    "fn": 2233,
+    "total_gt": 13365,
+    "total_pred": 15230
+  },
+  "seqeval_summary": {
+    "precision": 0.7389,
+    "recall": 0.8327,
+    "f1": 0.783
+  },
+  "per_class_metrics": {
+    "CASE_NUMBER": {
+      "precision": 0.6624,
+      "recall": 0.7676,
+      "f1": 0.7111,
+      "tp": 512,
+      "fp": 261,
+      "fn": 155,
+      "support": 667,
+      "pred_count": 773
+    },
+    "COURT": {
+      "precision": 0.84,
+      "recall": 0.8771,
+      "f1": 0.8582,
+      "tp": 1071,
+      "fp": 204,
+      "fn": 150,
+      "support": 1221,
+      "pred_count": 1275
+    },
+    "DATE": {
+      "precision": 0.8966,
+      "recall": 0.9128,
+      "f1": 0.9046,
+      "tp": 1015,
+      "fp": 117,
+      "fn": 97,
+      "support": 1112,
+      "pred_count": 1132
+    },
+    "GPE": {
+      "precision": 0.6705,
+      "recall": 0.7198,
+      "f1": 0.6943,
+      "tp": 519,
+      "fp": 255,
+      "fn": 202,
+      "support": 721,
+      "pred_count": 774
+    },
+    "JUDGE": {
+      "precision": 0.807,
+      "recall": 0.8932,
+      "f1": 0.8479,
+      "tp": 527,
+      "fp": 126,
+      "fn": 63,
+      "support": 590,
+      "pred_count": 653
+    },
+    "LAWYER": {
+      "precision": 0.6873,
+      "recall": 0.8593,
+      "f1": 0.7637,
+      "tp": 1545,
+      "fp": 703,
+      "fn": 253,
+      "support": 1798,
+      "pred_count": 2248
+    },
+    "ORG": {
+      "precision": 0.5321,
+      "recall": 0.7976,
+      "f1": 0.6384,
+      "tp": 729,
+      "fp": 641,
+      "fn": 185,
+      "support": 914,
+      "pred_count": 1370
+    },
+    "OTHER_PERSON": {
+      "precision": 0.8466,
+      "recall": 0.8656,
+      "f1": 0.856,
+      "tp": 960,
+      "fp": 174,
+      "fn": 149,
+      "support": 1109,
+      "pred_count": 1134
+    },
+    "PETITIONER": {
+      "precision": 0.6946,
+      "recall": 0.7123,
+      "f1": 0.7033,
+      "tp": 614,
+      "fp": 270,
+      "fn": 248,
+      "support": 862,
+      "pred_count": 884
+    },
+    "PRECEDENT": {
+      "precision": 0.5743,
+      "recall": 0.7015,
+      "f1": 0.6316,
+      "tp": 456,
+      "fp": 338,
+      "fn": 194,
+      "support": 650,
+      "pred_count": 794
+    },
+    "PROVISION": {
+      "precision": 0.8735,
+      "recall": 0.9172,
+      "f1": 0.8948,
+      "tp": 1119,
+      "fp": 162,
+      "fn": 101,
+      "support": 1220,
+      "pred_count": 1281
+    },
+    "RESPONDENT": {
+      "precision": 0.5395,
+      "recall": 0.7547,
+      "f1": 0.6292,
+      "tp": 840,
+      "fp": 717,
+      "fn": 273,
+      "support": 1113,
+      "pred_count": 1557
+    },
+    "STATUTE": {
+      "precision": 0.898,
+      "recall": 0.9026,
+      "f1": 0.9003,
+      "tp": 880,
+      "fp": 100,
+      "fn": 95,
+      "support": 975,
+      "pred_count": 980
+    },
+    "WITNESS": {
+      "precision": 0.92,
+      "recall": 0.8354,
+      "f1": 0.8756,
+      "tp": 345,
+      "fp": 30,
+      "fn": 68,
+      "support": 413,
+      "pred_count": 375
+    }
+  },
+  "error_analysis_samples": {
+    "type_mismatches": [
+      {
+        "doc_idx": 1,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Special Land Acquisition Officer and\n               Competent Authority,\n               National Highways Authority of India,\n               Nh-7, No.678/3, Neerubhavi Kempanna\n               Layout, Hebbal, Bangalore - 560 024",
+        "pred_text": "Special Land Acquisition Officer and\n               Competent Authority,\n               National Highways Authority of India",
+        "true_span": [
+          806,
+          1033
+        ],
+        "pred_span": [
+          806,
+          930
+        ]
+      },
+      {
+        "doc_idx": 4,
+        "true_entity": "LAWYER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "K. Chenchu Rami Reddy",
+        "pred_text": "K. Chenchu Rami Reddy",
+        "true_span": [
+          1019,
+          1040
+        ],
+        "pred_span": [
+          1019,
+          1040
+        ]
+      },
+      {
+        "doc_idx": 8,
+        "true_entity": "JUDGE",
+        "pred_entity": "LAWYER",
+        "true_text": "P. K. Kedia",
+        "pred_text": "P",
+        "true_span": [
+          94,
+          105
+        ],
+        "pred_span": [
+          94,
+          95
+        ]
+      },
+      {
+        "doc_idx": 8,
+        "true_entity": "JUDGE",
+        "pred_entity": "LAWYER",
+        "true_text": "Mahavir Prasad",
+        "pred_text": "Prasad",
+        "true_span": [
+          138,
+          152
+        ],
+        "pred_span": [
+          146,
+          152
+        ]
+      },
+      {
+        "doc_idx": 22,
+        "true_entity": "LAWYER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Pooja Tidke",
+        "pred_text": "Po",
+        "true_span": [
+          892,
+          903
+        ],
+        "pred_span": [
+          892,
+          894
+        ]
+      },
+      {
+        "doc_idx": 22,
+        "true_entity": "LAWYER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Ryan\n                            Menedes",
+        "pred_text": "Menede",
+        "true_span": [
+          923,
+          963
+        ],
+        "pred_span": [
+          956,
+          962
+        ]
+      },
+      {
+        "doc_idx": 25,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Malathi,\n@ Maluruthamma",
+        "pred_text": "Mal",
+        "true_span": [
+          1741,
+          1764
+        ],
+        "pred_span": [
+          1741,
+          1744
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Suresan",
+        "pred_text": "Suresan",
+        "true_span": [
+          603,
+          610
+        ],
+        "pred_span": [
+          603,
+          610
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "State Of Kerala",
+        "pred_text": "State Of Kerala",
+        "true_span": [
+          2574,
+          2589
+        ],
+        "pred_span": [
+          2574,
+          2589
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "true_entity": "RESPONDENT",
+        "pred_entity": "PETITIONER",
+        "true_text": "Prajeesh",
+        "pred_text": "h",
+        "true_span": [
+          3526,
+          3534
+        ],
+        "pred_span": [
+          3533,
+          3534
+        ]
+      },
+      {
+        "doc_idx": 31,
+        "true_entity": "LAWYER",
+        "pred_entity": "JUDGE",
+        "true_text": "Jitendra Ranjan Pandey",
+        "pred_text": "Jitendra Ranjan Pandey",
+        "true_span": [
+          1137,
+          1159
+        ],
+        "pred_span": [
+          1137,
+          1159
+        ]
+      },
+      {
+        "doc_idx": 32,
+        "true_entity": "JUDGE",
+        "pred_entity": "LAWYER",
+        "true_text": "Manjula Das",
+        "pred_text": "Manjula Das",
+        "true_span": [
+          380,
+          391
+        ],
+        "pred_span": [
+          380,
+          391
+        ]
+      },
+      {
+        "doc_idx": 32,
+        "true_entity": "JUDGE",
+        "pred_entity": "LAWYER",
+        "true_text": "Mohd. Jamshed",
+        "pred_text": "Mohd. Jamshed",
+        "true_span": [
+          420,
+          433
+        ],
+        "pred_span": [
+          420,
+          433
+        ]
+      },
+      {
+        "doc_idx": 38,
+        "true_entity": "JUDGE",
+        "pred_entity": "LAWYER",
+        "true_text": "Hemant Kumar S Rivastava",
+        "pred_text": "Hemant Kumar",
+        "true_span": [
+          949,
+          973
+        ],
+        "pred_span": [
+          949,
+          961
+        ]
+      },
+      {
+        "doc_idx": 40,
+        "true_entity": "JUDGE",
+        "pred_entity": "LAWYER",
+        "true_text": "Manjunatha M.S.",
+        "pred_text": "Manjunatha",
+        "true_span": [
+          1534,
+          1549
+        ],
+        "pred_span": [
+          1534,
+          1544
+        ]
+      },
+      {
+        "doc_idx": 41,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Vimala Saroja",
+        "pred_text": "imala",
+        "true_span": [
+          1535,
+          1548
+        ],
+        "pred_span": [
+          1536,
+          1541
+        ]
+      },
+      {
+        "doc_idx": 44,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "State Of Karnataka",
+        "pred_text": "State",
+        "true_span": [
+          1543,
+          1561
+        ],
+        "pred_span": [
+          1543,
+          1548
+        ]
+      },
+      {
+        "doc_idx": 45,
+        "true_entity": "JUDGE",
+        "pred_entity": "LAWYER",
+        "true_text": "V. K. Jadhav",
+        "pred_text": "V",
+        "true_span": [
+          2182,
+          2194
+        ],
+        "pred_span": [
+          2182,
+          2183
+        ]
+      },
+      {
+        "doc_idx": 45,
+        "true_entity": "JUDGE",
+        "pred_entity": "LAWYER",
+        "true_text": "Shrikant D. Kulkarni",
+        "pred_text": "kan",
+        "true_span": [
+          2234,
+          2254
+        ],
+        "pred_span": [
+          2238,
+          2241
+        ]
+      },
+      {
+        "doc_idx": 53,
+        "true_entity": "PETITIONER",
+        "pred_entity": "LAWYER",
+        "true_text": "B.R. Ganapathi Singh",
+        "pred_text": "B.R. Ganapathi Singh",
+        "true_span": [
+          345,
+          365
+        ],
+        "pred_span": [
+          345,
+          365
+        ]
+      },
+      {
+        "doc_idx": 55,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "L.Gopalakrishnan",
+        "pred_text": "L.Gopalakrishnan",
+        "true_span": [
+          933,
+          949
+        ],
+        "pred_span": [
+          933,
+          949
+        ]
+      },
+      {
+        "doc_idx": 55,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "G.R.Karthikeyan",
+        "pred_text": "G.R.Karthikeyan",
+        "true_span": [
+          976,
+          991
+        ],
+        "pred_span": [
+          976,
+          991
+        ]
+      },
+      {
+        "doc_idx": 55,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "D.Lakshminarayanaswamy",
+        "pred_text": "D",
+        "true_span": [
+          1018,
+          1040
+        ],
+        "pred_span": [
+          1018,
+          1019
+        ]
+      },
+      {
+        "doc_idx": 55,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "R.Krishnamoorthy",
+        "pred_text": "R.Krishnamoorthy",
+        "true_span": [
+          1067,
+          1083
+        ],
+        "pred_span": [
+          1067,
+          1083
+        ]
+      },
+      {
+        "doc_idx": 55,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Koneru Satyanarayana",
+        "pred_text": "Koneru Satyanarayana",
+        "true_span": [
+          1110,
+          1130
+        ],
+        "pred_span": [
+          1110,
+          1130
+        ]
+      },
+      {
+        "doc_idx": 55,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "V.Lakshminarayanaswamy",
+        "pred_text": "V.Lakshminarayanaswamy",
+        "true_span": [
+          1157,
+          1179
+        ],
+        "pred_span": [
+          1157,
+          1179
+        ]
+      },
+      {
+        "doc_idx": 55,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "J.Anand",
+        "pred_text": "J",
+        "true_span": [
+          1206,
+          1213
+        ],
+        "pred_span": [
+          1206,
+          1207
+        ]
+      },
+      {
+        "doc_idx": 57,
+        "true_entity": "LAWYER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "C.S.C.,Purnendu Kumar Singh",
+        "pred_text": "C.S.C.",
+        "true_span": [
+          359,
+          386
+        ],
+        "pred_span": [
+          359,
+          365
+        ]
+      },
+      {
+        "doc_idx": 57,
+        "true_entity": "LAWYER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "C.S.C.,Siddharth Singhal",
+        "pred_text": "C.S.C.",
+        "true_span": [
+          629,
+          653
+        ],
+        "pred_span": [
+          629,
+          635
+        ]
+      },
+      {
+        "doc_idx": 60,
+        "true_entity": "PETITIONER",
+        "pred_entity": "COURT",
+        "true_text": "Gauhati High Court",
+        "pred_text": "G",
+        "true_span": [
+          366,
+          384
+        ],
+        "pred_span": [
+          366,
+          367
+        ]
+      },
+      {
+        "doc_idx": 68,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "New India Assurance Company Ltd.",
+        "pred_text": "New India Assurance Company Ltd.",
+        "true_span": [
+          388,
+          420
+        ],
+        "pred_span": [
+          388,
+          420
+        ]
+      },
+      {
+        "doc_idx": 69,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Babita Rani",
+        "pred_text": "Babita Rani",
+        "true_span": [
+          686,
+          697
+        ],
+        "pred_span": [
+          686,
+          697
+        ]
+      },
+      {
+        "doc_idx": 89,
+        "true_entity": "RESPONDENT",
+        "pred_entity": "PETITIONER",
+        "true_text": "Oci Corporation",
+        "pred_text": "Corporation",
+        "true_span": [
+          2229,
+          2244
+        ],
+        "pred_span": [
+          2233,
+          2244
+        ]
+      },
+      {
+        "doc_idx": 93,
+        "true_entity": "LAWYER",
+        "pred_entity": "JUDGE",
+        "true_text": "Lalit Kishore",
+        "pred_text": "Lalit Kishore",
+        "true_span": [
+          1166,
+          1179
+        ],
+        "pred_span": [
+          1166,
+          1179
+        ]
+      },
+      {
+        "doc_idx": 93,
+        "true_entity": "LAWYER",
+        "pred_entity": "JUDGE",
+        "true_text": "Vikash Kumar",
+        "pred_text": "ikash Kumar",
+        "true_span": [
+          1193,
+          1205
+        ],
+        "pred_span": [
+          1194,
+          1205
+        ]
+      },
+      {
+        "doc_idx": 93,
+        "true_entity": "LAWYER",
+        "pred_entity": "JUDGE",
+        "true_text": "Akash Chaturvedi",
+        "pred_text": "kas",
+        "true_span": [
+          1216,
+          1232
+        ],
+        "pred_span": [
+          1217,
+          1220
+        ]
+      },
+      {
+        "doc_idx": 97,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Union of India",
+        "pred_text": "Union of India",
+        "true_span": [
+          835,
+          849
+        ],
+        "pred_span": [
+          835,
+          849
+        ]
+      },
+      {
+        "doc_idx": 103,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Shambhu Yadav",
+        "pred_text": "S",
+        "true_span": [
+          436,
+          449
+        ],
+        "pred_span": [
+          436,
+          437
+        ]
+      },
+      {
+        "doc_idx": 103,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Binod Yadav",
+        "pred_text": "Bin",
+        "true_span": [
+          695,
+          706
+        ],
+        "pred_span": [
+          695,
+          698
+        ]
+      },
+      {
+        "doc_idx": 103,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Rajesh Yadav",
+        "pred_text": "Rajesh Yadav",
+        "true_span": [
+          819,
+          831
+        ],
+        "pred_span": [
+          819,
+          831
+        ]
+      },
+      {
+        "doc_idx": 109,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "rime Properties",
+        "pred_text": "Prime Properties",
+        "true_span": [
+          1054,
+          1069
+        ],
+        "pred_span": [
+          1053,
+          1069
+        ]
+      },
+      {
+        "doc_idx": 109,
+        "true_entity": "RESPONDENT",
+        "pred_entity": "LAWYER",
+        "true_text": "Swagruha Projects Pvt.Ltd.",
+        "pred_text": "wa",
+        "true_span": [
+          1354,
+          1380
+        ],
+        "pred_span": [
+          1355,
+          1357
+        ]
+      },
+      {
+        "doc_idx": 109,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Prime Properties",
+        "pred_text": "Prime",
+        "true_span": [
+          1513,
+          1529
+        ],
+        "pred_span": [
+          1513,
+          1518
+        ]
+      },
+      {
+        "doc_idx": 117,
+        "true_entity": "LAWYER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Reddi Bapi Raju",
+        "pred_text": "Reddi Bapi Raju",
+        "true_span": [
+          1219,
+          1234
+        ],
+        "pred_span": [
+          1219,
+          1234
+        ]
+      },
+      {
+        "doc_idx": 124,
+        "true_entity": "JUDGE",
+        "pred_entity": "LAWYER",
+        "true_text": "Arun Kumar Verma",
+        "pred_text": "Arun Kumar Verma",
+        "true_span": [
+          661,
+          677
+        ],
+        "pred_span": [
+          661,
+          677
+        ]
+      },
+      {
+        "doc_idx": 128,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "V.G.P.Rajadas",
+        "pred_text": "V.G.P.Rajadas",
+        "true_span": [
+          630,
+          643
+        ],
+        "pred_span": [
+          630,
+          643
+        ]
+      },
+      {
+        "doc_idx": 128,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "V.G.P.Babudas",
+        "pred_text": "V",
+        "true_span": [
+          671,
+          684
+        ],
+        "pred_span": [
+          671,
+          672
+        ]
+      },
+      {
+        "doc_idx": 129,
+        "true_entity": "LAWYER",
+        "pred_entity": "JUDGE",
+        "true_text": "Jharkhandi Upadhyay",
+        "pred_text": "harkhandi Upadhyay",
+        "true_span": [
+          974,
+          993
+        ],
+        "pred_span": [
+          975,
+          993
+        ]
+      },
+      {
+        "doc_idx": 134,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Assistant General Manager\n            State Bank Of India, Centralized Pension Processing\n            Centre (Cppc), Lms Compound,\n            Thiruvananthapuram - 695 033",
+        "pred_text": "Assistant General Manager\n            State Bank Of India, Centralized Pension Processing\n            Centre (Cppc), Lms Compound,\n            Thiruvananthapuram - 695 033",
+        "true_span": [
+          510,
+          681
+        ],
+        "pred_span": [
+          510,
+          681
+        ]
+      },
+      {
+        "doc_idx": 134,
+        "true_entity": "PETITIONER",
+        "pred_entity": "RESPONDENT",
+        "true_text": "Branch Manager\n            State Bank Of India, Kadavoor Branch,\n            Kollam District - 691 601",
+        "pred_text": "Branch Manager\n            State Bank Of India, Kadavoor Branch,\n            Kollam District - 691 60",
+        "true_span": [
+          696,
+          798
+        ],
+        "pred_span": [
+          696,
+          797
+        ]
+      }
+    ],
+    "boundary_mismatches": [
+      {
+        "doc_idx": 0,
+        "entity_type": "RESPONDENT",
+        "true_text": "Surendran",
+        "pred_text": "Surendran\n                Police Constable, Vadakke",
+        "true_span": [
+          1302,
+          1311
+        ],
+        "pred_span": [
+          1302,
+          1353
+        ]
+      },
+      {
+        "doc_idx": 0,
+        "entity_type": "LAWYER",
+        "true_text": "K.K.Dheerendrakrishnan",
+        "pred_text": "K",
+        "true_span": [
+          1651,
+          1673
+        ],
+        "pred_span": [
+          1651,
+          1652
+        ]
+      },
+      {
+        "doc_idx": 0,
+        "entity_type": "LAWYER",
+        "true_text": "S.Rajeev",
+        "pred_text": "Rajee",
+        "true_span": [
+          1702,
+          1710
+        ],
+        "pred_span": [
+          1704,
+          1709
+        ]
+      },
+      {
+        "doc_idx": 1,
+        "entity_type": "LAWYER",
+        "true_text": "Chandan",
+        "pred_text": "Chandan.",
+        "true_span": [
+          1133,
+          1140
+        ],
+        "pred_span": [
+          1133,
+          1141
+        ]
+      },
+      {
+        "doc_idx": 1,
+        "entity_type": "RESPONDENT",
+        "true_text": "Vishnukanth G Katare",
+        "pred_text": "Vishnukanth G Kat",
+        "true_span": [
+          1302,
+          1322
+        ],
+        "pred_span": [
+          1302,
+          1319
+        ]
+      },
+      {
+        "doc_idx": 3,
+        "entity_type": "PETITIONER",
+        "true_text": "Ravi @ Raveendran",
+        "pred_text": "Ravi",
+        "true_span": [
+          550,
+          567
+        ],
+        "pred_span": [
+          550,
+          554
+        ]
+      },
+      {
+        "doc_idx": 3,
+        "entity_type": "LAWYER",
+        "true_text": "Prasun.S",
+        "pred_text": "Prasun",
+        "true_span": [
+          796,
+          804
+        ],
+        "pred_span": [
+          796,
+          802
+        ]
+      },
+      {
+        "doc_idx": 8,
+        "entity_type": "COURT",
+        "true_text": "Income Tax Appellate Tribunal\n                     Ahmedabad \"C\" Bench",
+        "pred_text": "Income Tax Appellate Tribunal\n                     Ahmedabad \"",
+        "true_span": [
+          7,
+          77
+        ],
+        "pred_span": [
+          7,
+          69
+        ]
+      },
+      {
+        "doc_idx": 8,
+        "entity_type": "PETITIONER",
+        "true_text": "Eagle Steel Industries",
+        "pred_text": "Eagle Steel Industries P.",
+        "true_span": [
+          278,
+          300
+        ],
+        "pred_span": [
+          278,
+          303
+        ]
+      },
+      {
+        "doc_idx": 8,
+        "entity_type": "RESPONDENT",
+        "true_text": "Income Tax Officer, Ward-\n     Ltd., Plot No. 9, Sanghi      2 (1)(1), Ahmedabad\n     Cement Godown, Sarkhej\n     Sanand Highway, Village:\n     Ularia,      Ahmedabad-\n     382210",
+        "pred_text": "Income Tax Officer, Ward-\n     Ltd.",
+        "true_span": [
+          308,
+          487
+        ],
+        "pred_span": [
+          308,
+          343
+        ]
+      },
+      {
+        "doc_idx": 9,
+        "entity_type": "RESPONDENT",
+        "true_text": "63 Moons Technologies Ltd.",
+        "pred_text": "Moons Technologies Ltd.",
+        "true_span": [
+          339,
+          365
+        ],
+        "pred_span": [
+          342,
+          365
+        ]
+      },
+      {
+        "doc_idx": 13,
+        "entity_type": "COURT",
+        "true_text": "High Court For The State Of Telangana",
+        "pred_text": "Court",
+        "true_span": [
+          0,
+          37
+        ],
+        "pred_span": [
+          5,
+          10
+        ]
+      },
+      {
+        "doc_idx": 13,
+        "entity_type": "JUDGE",
+        "true_text": "Justicehima Kohli",
+        "pred_text": "hima Kohli",
+        "true_span": [
+          67,
+          84
+        ],
+        "pred_span": [
+          74,
+          84
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity_type": "RESPONDENT",
+        "true_text": "Central Bureau of Investigation",
+        "pred_text": "Central Bureau of Investigation (C",
+        "true_span": [
+          795,
+          826
+        ],
+        "pred_span": [
+          795,
+          829
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity_type": "LAWYER",
+        "true_text": "Alakh Alok Srivastava",
+        "pred_text": "Alakh",
+        "true_span": [
+          1140,
+          1161
+        ],
+        "pred_span": [
+          1140,
+          1145
+        ]
+      },
+      {
+        "doc_idx": 22,
+        "entity_type": "PETITIONER",
+        "true_text": "Angre Port Private Ltd",
+        "pred_text": "Angre Port Private Ltd                         .",
+        "true_span": [
+          639,
+          661
+        ],
+        "pred_span": [
+          639,
+          687
+        ]
+      },
+      {
+        "doc_idx": 25,
+        "entity_type": "PETITIONER",
+        "true_text": "Girish @ Ratnagiri",
+        "pred_text": "Girish @ Ratnagiri\n     Chikkathammaiah",
+        "true_span": [
+          742,
+          760
+        ],
+        "pred_span": [
+          742,
+          781
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity_type": "PETITIONER",
+        "true_text": "Jamshed Noshir Sukhadwalla",
+        "pred_text": "Jamshed Noshir Sukhadwalla\n          of",
+        "true_span": [
+          203,
+          229
+        ],
+        "pred_span": [
+          203,
+          242
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity_type": "PETITIONER",
+        "true_text": "Ervad Dr.Rooyintan Peshotan Peer",
+        "pred_text": "Ervad Dr.Rooyintan Peshotan",
+        "true_span": [
+          671,
+          703
+        ],
+        "pred_span": [
+          671,
+          698
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity_type": "PETITIONER",
+        "true_text": "Berjis Desai",
+        "pred_text": "Berjis Desai\n          of Mumbai",
+        "true_span": [
+          829,
+          841
+        ],
+        "pred_span": [
+          829,
+          861
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity_type": "RESPONDENT",
+        "true_text": "Vada Dasturji Jamasp",
+        "pred_text": "Das",
+        "true_span": [
+          1876,
+          1896
+        ],
+        "pred_span": [
+          1881,
+          1884
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity_type": "RESPONDENT",
+        "true_text": "Phiroze Katrak",
+        "pred_text": "rak",
+        "true_span": [
+          1939,
+          1953
+        ],
+        "pred_span": [
+          1950,
+          1953
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity_type": "RESPONDENT",
+        "true_text": "Noshir Katrak",
+        "pred_text": "rak",
+        "true_span": [
+          1992,
+          2005
+        ],
+        "pred_span": [
+          2002,
+          2005
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity_type": "LAWYER",
+        "true_text": "Ajinkya Udane",
+        "pred_text": "Ajinkya",
+        "true_span": [
+          3395,
+          3408
+        ],
+        "pred_span": [
+          3395,
+          3402
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity_type": "PETITIONER",
+        "true_text": "Biveesh",
+        "pred_text": "B",
+        "true_span": [
+          480,
+          487
+        ],
+        "pred_span": [
+          480,
+          481
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity_type": "LAWYER",
+        "true_text": "C.G.Preetha",
+        "pred_text": "C",
+        "true_span": [
+          1276,
+          1287
+        ],
+        "pred_span": [
+          1276,
+          1277
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity_type": "LAWYER",
+        "true_text": "Joseph George(Mullakkariyil)",
+        "pred_text": "Joseph George",
+        "true_span": [
+          1409,
+          1437
+        ],
+        "pred_span": [
+          1409,
+          1422
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity_type": "LAWYER",
+        "true_text": "M.Revikrishnan",
+        "pred_text": "ik",
+        "true_span": [
+          1532,
+          1546
+        ],
+        "pred_span": [
+          1537,
+          1539
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity_type": "LAWYER",
+        "true_text": "Vipin Narayan",
+        "pred_text": "Narayan",
+        "true_span": [
+          1566,
+          1579
+        ],
+        "pred_span": [
+          1572,
+          1579
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity_type": "LAWYER",
+        "true_text": "S. Sreekumar",
+        "pred_text": "eekuma",
+        "true_span": [
+          1758,
+          1770
+        ],
+        "pred_span": [
+          1763,
+          1769
+        ]
+      },
+      {
+        "doc_idx": 32,
+        "entity_type": "RESPONDENT",
+        "true_text": "Principal Secretary (Finance)\n   The Govt. of Nct of Delhi,\n   4th Level, A Wing, Delhi Secretariat,\n   I.P. Estate, New Delhi",
+        "pred_text": "Principal Secretary (Finance)\n   The Govt. of Nct of Delhi,\n   4th Level, A Wing, Delhi Secretariat,\n   I.",
+        "true_span": [
+          1410,
+          1536
+        ],
+        "pred_span": [
+          1410,
+          1516
+        ]
+      },
+      {
+        "doc_idx": 32,
+        "entity_type": "RESPONDENT",
+        "true_text": "Commissioner (Vat),\n   Vyapaar Bhawan,\n   I.P. Estate, New Delhi",
+        "pred_text": "haw",
+        "true_span": [
+          1546,
+          1610
+        ],
+        "pred_span": [
+          1578,
+          1581
+        ]
+      },
+      {
+        "doc_idx": 34,
+        "entity_type": "LAWYER",
+        "true_text": "T. Pradyumna",
+        "pred_text": "T. Pradyumna         \n                                                                 Kumar Reddy",
+        "true_span": [
+          917,
+          929
+        ],
+        "pred_span": [
+          917,
+          1015
+        ]
+      },
+      {
+        "doc_idx": 34,
+        "entity_type": "LAWYER",
+        "true_text": "Kumar Reddy",
+        "pred_text": "T. Pradyumna         \n                                                                 Kumar Reddy",
+        "true_span": [
+          1004,
+          1015
+        ],
+        "pred_span": [
+          917,
+          1015
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity_type": "RESPONDENT",
+        "true_text": "Kannur International Airport Limited",
+        "pred_text": "Kannur International Airport Limited,\n                Kara Per",
+        "true_span": [
+          770,
+          806
+        ],
+        "pred_span": [
+          770,
+          832
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity_type": "LAWYER",
+        "true_text": "Vijayendra Prathap Singh",
+        "pred_text": "Vijayendra",
+        "true_span": [
+          1766,
+          1790
+        ],
+        "pred_span": [
+          1766,
+          1776
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity_type": "LAWYER",
+        "true_text": "Kamal Sankar",
+        "pred_text": "Kamal",
+        "true_span": [
+          1816,
+          1828
+        ],
+        "pred_span": [
+          1816,
+          1821
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity_type": "LAWYER",
+        "true_text": "Atul.N.",
+        "pred_text": "ul",
+        "true_span": [
+          1854,
+          1861
+        ],
+        "pred_span": [
+          1856,
+          1858
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity_type": "LAWYER",
+        "true_text": "Sayobani Basu",
+        "pred_text": "Say",
+        "true_span": [
+          1922,
+          1935
+        ],
+        "pred_span": [
+          1922,
+          1925
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity_type": "LAWYER",
+        "true_text": "Enoch David Simon Joel",
+        "pred_text": "och",
+        "true_span": [
+          1959,
+          1981
+        ],
+        "pred_span": [
+          1961,
+          1964
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity_type": "LAWYER",
+        "true_text": "S.Ramesh Babu",
+        "pred_text": "Ramesh Babu",
+        "true_span": [
+          2005,
+          2018
+        ],
+        "pred_span": [
+          2007,
+          2018
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity_type": "LAWYER",
+        "true_text": "S.Ananthakrishnan",
+        "pred_text": "Ana",
+        "true_span": [
+          2048,
+          2065
+        ],
+        "pred_span": [
+          2050,
+          2053
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity_type": "LAWYER",
+        "true_text": "R.Arun",
+        "pred_text": "run",
+        "true_span": [
+          2089,
+          2095
+        ],
+        "pred_span": [
+          2092,
+          2095
+        ]
+      },
+      {
+        "doc_idx": 39,
+        "entity_type": "JUDGE",
+        "true_text": "Raj Kumar Chauhan Dhjs",
+        "pred_text": "Raj Kumar Chauhan",
+        "true_span": [
+          135,
+          157
+        ],
+        "pred_span": [
+          135,
+          152
+        ]
+      },
+      {
+        "doc_idx": 40,
+        "entity_type": "COURT",
+        "true_text": "Xviii Addl.Chief\n   Metropolitan Magistrate, Bengaluru City",
+        "pred_text": "Court Of The Xviii Addl.Chief\n   Metropolitan Magistrate, Bengaluru City",
+        "true_span": [
+          20,
+          79
+        ],
+        "pred_span": [
+          7,
+          79
+        ]
+      },
+      {
+        "doc_idx": 40,
+        "entity_type": "JUDGE",
+        "true_text": "Manjunatha M.S",
+        "pred_text": "Manjunatha M.S.",
+        "true_span": [
+          101,
+          115
+        ],
+        "pred_span": [
+          101,
+          116
+        ]
+      },
+      {
+        "doc_idx": 40,
+        "entity_type": "LAWYER",
+        "true_text": "G.M",
+        "pred_text": "G.M.",
+        "true_span": [
+          575,
+          578
+        ],
+        "pred_span": [
+          575,
+          579
+        ]
+      },
+      {
+        "doc_idx": 40,
+        "entity_type": "RESPONDENT",
+        "true_text": "Rangaswamy.K.",
+        "pred_text": "Rangaswamy",
+        "true_span": [
+          657,
+          670
+        ],
+        "pred_span": [
+          657,
+          667
+        ]
+      },
+      {
+        "doc_idx": 40,
+        "entity_type": "LAWYER",
+        "true_text": "V.R",
+        "pred_text": "V.R..",
+        "true_span": [
+          984,
+          987
+        ],
+        "pred_span": [
+          984,
+          989
+        ]
+      },
+      {
+        "doc_idx": 40,
+        "entity_type": "PETITIONER",
+        "true_text": "Deepak.M.",
+        "pred_text": "Deep",
+        "true_span": [
+          1166,
+          1175
+        ],
+        "pred_span": [
+          1166,
+          1170
+        ]
+      }
+    ],
+    "completely_missed": [
+      {
+        "doc_idx": 0,
+        "entity": "RESPONDENT",
+        "text": "Stephen",
+        "span": [
+          1556,
+          1563
+        ]
+      },
+      {
+        "doc_idx": 0,
+        "entity": "LAWYER",
+        "text": "M.S.Breez",
+        "span": [
+          1739,
+          1748
+        ]
+      },
+      {
+        "doc_idx": 22,
+        "entity": "RESPONDENT",
+        "text": "Tag 15",
+        "span": [
+          776,
+          782
+        ]
+      },
+      {
+        "doc_idx": 22,
+        "entity": "LAWYER",
+        "text": "Krushi Barfiwala",
+        "span": [
+          905,
+          921
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "RESPONDENT",
+        "text": "Burjor H. Antia",
+        "span": [
+          1912,
+          1927
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "RESPONDENT",
+        "text": "Sharookh Sethna",
+        "span": [
+          1965,
+          1980
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "LAWYER",
+        "text": "Zerick Dastur",
+        "span": [
+          2831,
+          2844
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "LAWYER",
+        "text": "Mulla",
+        "span": [
+          3655,
+          3660
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "LAWYER",
+        "text": "Mulla",
+        "span": [
+          3666,
+          3671
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "LAWYER",
+        "text": "Craige Blunt",
+        "span": [
+          3676,
+          3688
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "LAWYER",
+        "text": "Caroe",
+        "span": [
+          3693,
+          3698
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity": "RESPONDENT",
+        "text": "State Of Kerala",
+        "span": [
+          1621,
+          1636
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity": "RESPONDENT",
+        "text": "Subodh",
+        "span": [
+          3367,
+          3373
+        ]
+      },
+      {
+        "doc_idx": 32,
+        "entity": "LAWYER",
+        "text": "A.K. Behra",
+        "span": [
+          1654,
+          1664
+        ]
+      },
+      {
+        "doc_idx": 32,
+        "entity": "LAWYER",
+        "text": "R.K. Jain",
+        "span": [
+          1700,
+          1709
+        ]
+      },
+      {
+        "doc_idx": 32,
+        "entity": "LAWYER",
+        "text": "Neha Bairagee",
+        "span": [
+          1718,
+          1731
+        ]
+      },
+      {
+        "doc_idx": 32,
+        "entity": "LAWYER",
+        "text": "Sameer Sharma",
+        "span": [
+          1802,
+          1815
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity": "RESPONDENT",
+        "text": "Gmr Airports",
+        "span": [
+          1148,
+          1160
+        ]
+      },
+      {
+        "doc_idx": 44,
+        "entity": "LAWYER",
+        "text": "Vijayakumar Majage",
+        "span": [
+          1698,
+          1716
+        ]
+      },
+      {
+        "doc_idx": 44,
+        "entity": "RESPONDENT",
+        "text": "Kallegowda",
+        "span": [
+          1741,
+          1751
+        ]
+      },
+      {
+        "doc_idx": 47,
+        "entity": "PETITIONER",
+        "text": "Atar Singh So Dwarika Prasad",
+        "span": [
+          1288,
+          1316
+        ]
+      },
+      {
+        "doc_idx": 47,
+        "entity": "PETITIONER",
+        "text": "Bhure",
+        "span": [
+          1343,
+          1348
+        ]
+      },
+      {
+        "doc_idx": 48,
+        "entity": "PETITIONER",
+        "text": "Estate Officer",
+        "span": [
+          284,
+          298
+        ]
+      },
+      {
+        "doc_idx": 53,
+        "entity": "JUDGE",
+        "text": "Nagarathna J.",
+        "span": [
+          1967,
+          1980
+        ]
+      },
+      {
+        "doc_idx": 61,
+        "entity": "LAWYER",
+        "text": "Keshav Mathur",
+        "span": [
+          1256,
+          1269
+        ]
+      },
+      {
+        "doc_idx": 68,
+        "entity": "LAWYER",
+        "text": "Rejoice B.Chembakasseril",
+        "span": [
+          1361,
+          1385
+        ]
+      },
+      {
+        "doc_idx": 87,
+        "entity": "RESPONDENT",
+        "text": "Jyoti Bhartesh Shaha",
+        "span": [
+          1515,
+          1535
+        ]
+      },
+      {
+        "doc_idx": 88,
+        "entity": "PETITIONER",
+        "text": "Authorised Officer & Sub-Divisional\nOfficer, Shivpuri, M.P.",
+        "span": [
+          1513,
+          1572
+        ]
+      },
+      {
+        "doc_idx": 89,
+        "entity": "COURT",
+        "text": "S U P R E M E         C O U R T   O F   I N D I A",
+        "span": [
+          140,
+          189
+        ]
+      },
+      {
+        "doc_idx": 99,
+        "entity": "RESPONDENT",
+        "text": "Thaslim Thanissery Kandy",
+        "span": [
+          1545,
+          1569
+        ]
+      },
+      {
+        "doc_idx": 106,
+        "entity": "PETITIONER",
+        "text": "State",
+        "span": [
+          314,
+          319
+        ]
+      },
+      {
+        "doc_idx": 109,
+        "entity": "PETITIONER",
+        "text": "Prime Properties",
+        "span": [
+          1278,
+          1294
+        ]
+      },
+      {
+        "doc_idx": 120,
+        "entity": "RESPONDENT",
+        "text": "State",
+        "span": [
+          3327,
+          3332
+        ]
+      },
+      {
+        "doc_idx": 120,
+        "entity": "RESPONDENT",
+        "text": "State",
+        "span": [
+          4135,
+          4140
+        ]
+      },
+      {
+        "doc_idx": 135,
+        "entity": "RESPONDENT",
+        "text": "Bangalore",
+        "span": [
+          611,
+          620
+        ]
+      },
+      {
+        "doc_idx": 136,
+        "entity": "LAWYER",
+        "text": "Rashid Ali",
+        "span": [
+          914,
+          924
+        ]
+      },
+      {
+        "doc_idx": 137,
+        "entity": "RESPONDENT",
+        "text": "Jijo",
+        "span": [
+          1214,
+          1218
+        ]
+      },
+      {
+        "doc_idx": 139,
+        "entity": "PETITIONER",
+        "text": "Pendyala Hemalatha",
+        "span": [
+          1170,
+          1188
+        ]
+      },
+      {
+        "doc_idx": 145,
+        "entity": "RESPONDENT",
+        "text": "O.D.Paulose",
+        "span": [
+          1530,
+          1541
+        ]
+      },
+      {
+        "doc_idx": 145,
+        "entity": "RESPONDENT",
+        "text": "H.M.Varghese Kathanar",
+        "span": [
+          1673,
+          1694
+        ]
+      },
+      {
+        "doc_idx": 146,
+        "entity": "PETITIONER",
+        "text": "Rani Singh",
+        "span": [
+          493,
+          503
+        ]
+      },
+      {
+        "doc_idx": 147,
+        "entity": "RESPONDENT",
+        "text": "Excise and Service",
+        "span": [
+          669,
+          687
+        ]
+      },
+      {
+        "doc_idx": 152,
+        "entity": "PETITIONER",
+        "text": "Raju Sampat Darode",
+        "span": [
+          2020,
+          2038
+        ]
+      },
+      {
+        "doc_idx": 152,
+        "entity": "RESPONDENT",
+        "text": "Balendrasingh Shivmurtisingh Thakur",
+        "span": [
+          3806,
+          3841
+        ]
+      },
+      {
+        "doc_idx": 159,
+        "entity": "PETITIONER",
+        "text": ". Ashok Kumar Singh",
+        "span": [
+          1028,
+          1047
+        ]
+      },
+      {
+        "doc_idx": 163,
+        "entity": "PETITIONER",
+        "text": "Uoi",
+        "span": [
+          108,
+          111
+        ]
+      },
+      {
+        "doc_idx": 163,
+        "entity": "PETITIONER",
+        "text": "Uoi",
+        "span": [
+          704,
+          707
+        ]
+      },
+      {
+        "doc_idx": 163,
+        "entity": "PETITIONER",
+        "text": "Uoi",
+        "span": [
+          1305,
+          1308
+        ]
+      },
+      {
+        "doc_idx": 163,
+        "entity": "PETITIONER",
+        "text": "Uoi",
+        "span": [
+          1992,
+          1995
+        ]
+      },
+      {
+        "doc_idx": 163,
+        "entity": "PETITIONER",
+        "text": "Uoi",
+        "span": [
+          2578,
+          2581
+        ]
+      }
+    ],
+    "spurious_predictions": [
+      {
+        "doc_idx": 0,
+        "entity": "RESPONDENT",
+        "text": "Inspector Of Police, Vadakkekkad",
+        "span": [
+          1204,
+          1236
+        ]
+      },
+      {
+        "doc_idx": 0,
+        "entity": "LAWYER",
+        "text": "Vadakkeka",
+        "span": [
+          1598,
+          1607
+        ]
+      },
+      {
+        "doc_idx": 0,
+        "entity": "LAWYER",
+        "text": "n",
+        "span": [
+          1612,
+          1613
+        ]
+      },
+      {
+        "doc_idx": 0,
+        "entity": "LAWYER",
+        "text": "K",
+        "span": [
+          1653,
+          1654
+        ]
+      },
+      {
+        "doc_idx": 0,
+        "entity": "LAWYER",
+        "text": "heerendrakrishnan",
+        "span": [
+          1656,
+          1673
+        ]
+      },
+      {
+        "doc_idx": 1,
+        "entity": "RESPONDENT",
+        "text": "Ministry of Road Transport & Highways",
+        "span": [
+          486,
+          523
+        ]
+      },
+      {
+        "doc_idx": 1,
+        "entity": "LAWYER",
+        "text": "Usha Rani",
+        "span": [
+          1069,
+          1078
+        ]
+      },
+      {
+        "doc_idx": 3,
+        "entity": "PETITIONER",
+        "text": "balavayal Police Station",
+        "span": [
+          480,
+          504
+        ]
+      },
+      {
+        "doc_idx": 3,
+        "entity": "PETITIONER",
+        "text": "Wayanad",
+        "span": [
+          507,
+          514
+        ]
+      },
+      {
+        "doc_idx": 3,
+        "entity": "RESPONDENT",
+        "text": "@ Ra",
+        "span": [
+          555,
+          559
+        ]
+      },
+      {
+        "doc_idx": 3,
+        "entity": "PETITIONER",
+        "text": "ve",
+        "span": [
+          559,
+          561
+        ]
+      },
+      {
+        "doc_idx": 3,
+        "entity": "RESPONDENT",
+        "text": "endran",
+        "span": [
+          561,
+          567
+        ]
+      },
+      {
+        "doc_idx": 8,
+        "entity": "JUDGE",
+        "text": ".",
+        "span": [
+          95,
+          96
+        ]
+      },
+      {
+        "doc_idx": 8,
+        "entity": "LAWYER",
+        "text": "K. Ke",
+        "span": [
+          97,
+          102
+        ]
+      },
+      {
+        "doc_idx": 8,
+        "entity": "JUDGE",
+        "text": "dia",
+        "span": [
+          102,
+          105
+        ]
+      },
+      {
+        "doc_idx": 13,
+        "entity": "COURT",
+        "text": "State Of Telangana",
+        "span": [
+          19,
+          37
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity": "LAWYER",
+        "text": "r",
+        "span": [
+          1130,
+          1131
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity": "LAWYER",
+        "text": "Alok",
+        "span": [
+          1146,
+          1150
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity": "LAWYER",
+        "text": "vastava",
+        "span": [
+          1154,
+          1161
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity": "LAWYER",
+        "text": "G",
+        "span": [
+          1241,
+          1242
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity": "LAWYER",
+        "text": "ag",
+        "span": [
+          1266,
+          1268
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity": "LAWYER",
+        "text": "Gp",
+        "span": [
+          1288,
+          1290
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity": "LAWYER",
+        "text": "Gp",
+        "span": [
+          1319,
+          1321
+        ]
+      },
+      {
+        "doc_idx": 20,
+        "entity": "LAWYER",
+        "text": "ag",
+        "span": [
+          1359,
+          1361
+        ]
+      },
+      {
+        "doc_idx": 25,
+        "entity": "RESPONDENT",
+        "text": "i",
+        "span": [
+          1747,
+          1748
+        ]
+      },
+      {
+        "doc_idx": 25,
+        "entity": "PETITIONER",
+        "text": "eva",
+        "span": [
+          1780,
+          1783
+        ]
+      },
+      {
+        "doc_idx": 25,
+        "entity": "PETITIONER",
+        "text": "ra",
+        "span": [
+          1902,
+          1904
+        ]
+      },
+      {
+        "doc_idx": 25,
+        "entity": "JUDGE",
+        "text": "B.Veerappa",
+        "span": [
+          2876,
+          2886
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "RESPONDENT",
+        "text": "Trustees of the Zarthoshti Anjuman",
+        "span": [
+          2048,
+          2082
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "RESPONDENT",
+        "text": "Atash Behram Trust",
+        "span": [
+          2171,
+          2189
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "RESPONDENT",
+        "text": "agan",
+        "span": [
+          2222,
+          2226
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "RESPONDENT",
+        "text": "Shankar",
+        "span": [
+          2231,
+          2238
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "RESPONDENT",
+        "text": "jee",
+        "span": [
+          2265,
+          2268
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "RESPONDENT",
+        "text": "Trustees\n          of",
+        "span": [
+          2434,
+          2455
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "RESPONDENT",
+        "text": "rmasji Bomanji Wadia\n          Fire Temple Charity Fund",
+        "span": [
+          2462,
+          2517
+        ]
+      },
+      {
+        "doc_idx": 27,
+        "entity": "LAWYER",
+        "text": "dane",
+        "span": [
+          3404,
+          3408
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity": "RESPONDENT",
+        "text": "iveesh",
+        "span": [
+          481,
+          487
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity": "LAWYER",
+        "text": ".B.",
+        "span": [
+          1064,
+          1067
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity": "LAWYER",
+        "text": "G.Preetha",
+        "span": [
+          1278,
+          1287
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity": "LAWYER",
+        "text": "hnan",
+        "span": [
+          1542,
+          1546
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity": "LAWYER",
+        "text": "rna",
+        "span": [
+          1728,
+          1731
+        ]
+      },
+      {
+        "doc_idx": 29,
+        "entity": "PETITIONER",
+        "text": "pore Police Station",
+        "span": [
+          2509,
+          2528
+        ]
+      },
+      {
+        "doc_idx": 31,
+        "entity": "JUDGE",
+        "text": "av",
+        "span": [
+          1270,
+          1272
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity": "LAWYER",
+        "text": "Varghese",
+        "span": [
+          566,
+          574
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity": "LAWYER",
+        "text": "pinathan Nair",
+        "span": [
+          688,
+          701
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity": "RESPONDENT",
+        "text": ".",
+        "span": [
+          841,
+          842
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity": "LAWYER",
+        "text": "ratha",
+        "span": [
+          1778,
+          1783
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity": "LAWYER",
+        "text": "Singh",
+        "span": [
+          1785,
+          1790
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity": "LAWYER",
+        "text": "Sankar",
+        "span": [
+          1822,
+          1828
+        ]
+      },
+      {
+        "doc_idx": 36,
+        "entity": "LAWYER",
+        "text": "N",
+        "span": [
+          1859,
+          1860
+        ]
+      }
+    ]
+  }
+}

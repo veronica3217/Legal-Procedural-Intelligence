@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Build outputs
+dist/
+build/
+coverage/
+.vite/
+
+# Model checkpoints and large generated artifacts
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Logs and local uploads
+*.log
+uploads/
